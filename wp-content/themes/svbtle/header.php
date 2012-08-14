@@ -10,6 +10,7 @@
 		<title><?php wp_title( 'by', true, 'right' ); bloginfo( 'name' ); ?></title>
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Mono|PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
