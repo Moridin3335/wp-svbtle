@@ -37,9 +37,7 @@ include('header.php');
 				<?php wp_nonce_field( 'new-post' ); ?>
 			<?php endif; ?>
 
-			<p>
 				<textarea  id="post_title" class="text expand" name="post_title" placeholder="Title Here" size="60" tabindex="1"><?php echo $post_title;?></textarea>
-			</p>
 
 			<p>
 				<textarea name="post_content" id="post_content" placeholder="Write post here" class="content expand"  tabindex="2"><?php echo $post_content ?></textarea>
@@ -59,8 +57,8 @@ include('header.php');
 		<a href="#external-url" class="open-external button">Option</a>
 		
 		<div class="double">
-			<input type="radio" class="RadioClass" name="post_status" value="draft" <?php if($post_status == 'draft'): ?>checked="checked"<?php endif; ?> id="">
-			<a href="#" class="button <?php if($post_status == 'draft'): ?>checked<?php endif; ?>"><span class="tick">&#10004;</span>	Idea</a>
+			<input type="radio" class="RadioClass" name="post_status" value="draft" <?php if($post_status == 'draft' or empty($_GET['id'])): ?>checked="checked"<?php endif; ?> id="">
+			<a href="#" class="button <?php if(($post_status == 'draft') or empty($_GET['id'])): ?>checked<?php endif; ?>"><span class="tick">&#10004;</span>	Idea</a>
 			
 			<input type="radio" class="RadioClass" name="post_status" value="publish" <?php if($post_status == 'publish'): ?>checked="checked"<?php endif; ?> id="">
 			<a href="#" class="button <?php if($post_status == 'publish'): ?>checked<?php endif; ?>"><span class="tick">&#10004;</span> Public</a>
@@ -108,11 +106,10 @@ include('header.php');
 			$('.overlay').hide();
 		});
 		
-		// $('.overlay').click(function(){
-		// 	$('.overlay').hide();
-		// });
-		
+		$('.expand').autosize();
 	});
 </script>
+
+
 
 <?php include('footer.php'); ?>
